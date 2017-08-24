@@ -10,7 +10,7 @@ import {Component, NgModule, VERSION} from '@angular/core'
     </div>
   `,
 })
-export class App {
+export class AppComponent {
   
   //[] for property binding
   //() for event binding
