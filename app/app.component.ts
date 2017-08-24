@@ -1,17 +1,30 @@
-import { Component } from '@angular/core';
+import {Component, NgModule, VERSION} from '@angular/core'
 
 @Component({
   selector: 'my-app',
-  styles: [`
-    
-  `],
   template: `
-    <div class="jumbotron text-center">
-      <h1>The App Lives!</h1>
-      <p>{{ message }}</p>
+    <div>
+      <h2 style="color:blue;">Hello {{name}}</h2>
+      <h2 [style.color] = "color"> Grrreen </h2>
+      <button (click) = "changeToRed()">Toggle Red Green Here</button>
     </div>
-  `
+  `,
 })
-export class AppComponent {
-  message = 'This is the sample message.';
+export class App {
+  
+  //[] for property binding
+  //() for event binding
+  
+  name:string;
+  
+  constructor() {
+    this.name  = `Angular`
+    this.color = "green"
+  }
+  
+  name = "abc" // constructor would be given value
+  
+  changeToRed(){
+    this.color = (this.color == "green"?"red":"green");
+  }
 }
